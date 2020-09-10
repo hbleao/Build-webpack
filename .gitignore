@@ -1,6 +1,7 @@
 #FOLDERS
 node_modules
 coverage
+dist
 
 #FILES
 yarn-error.log

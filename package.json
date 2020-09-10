@@ -11,7 +11,6 @@
     "dev": "webpack-dev-server --open --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js",
     "test": "jest --watch",
-    "test:staged": "jest --findRelatedTests",
     "test:ci": "jest --coverage"
   },
   "dependencies": {
@@ -29,11 +28,13 @@
     "@types/react-router-dom": "^5.1.5",
     "babel-loader": "^8.1.0",
     "clean-webpack-plugin": "^3.0.0",
+    "file-loader": "^6.1.0",
     "html-webpack-plugin": "^4.4.1",
     "husky": "^4.3.0",
     "jest": "^26.4.2",
     "jest-cli": "^26.4.2",
     "lint-staged": "^10.3.0",
+    "svg-inline-loader": "^0.8.2",
     "ts-jest": "^26.3.0",
     "ts-loader": "^8.0.3",
     "typescript": "^4.0.2",

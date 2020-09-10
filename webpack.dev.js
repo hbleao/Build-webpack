@@ -17,9 +17,12 @@ module.exports = merge(common, {
     contentBase: './public',
     writeToDisk: true,
     historyApiFallback: true,
-    port: 3001,
+    port: 3000,
   },
   plugins: [
+    new DefinePlugin({
+      'process.env.API_URL': JSON.stringify('http://localhost:3000/dev'),
+    }),
     new HtmlWebpackPlugin({ template: './src/templates/template.dev.html' }),
   ],
   devtool: 'eval-source-map',

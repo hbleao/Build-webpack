@@ -1,3 +1,4 @@
+const { DefinePlugin } = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const common = require('./webpack.common');
 const { merge } = require('webpack-merge');
@@ -32,6 +33,9 @@ module.exports = merge(common, {
     'react-router-dom': 'ReactRouterDOM',
   },
   plugins: [
+    new DefinePlugin({
+      'process.env.API_URL': JSON.stringify('http://localhost:3000'),
+    }),
     new HtmlWebpackPlugin({ template: './src/templates/template.prod.html' }),
   ],
   devtool: 'eval-source-map',

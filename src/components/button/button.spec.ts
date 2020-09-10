@@ -1,6 +1,6 @@
 describe('aa', () => {
   it('aa', () => {
     const a = 'a';
-    expect(a).toBe('b');
+    expect(a).toBe('a');
   });
 });

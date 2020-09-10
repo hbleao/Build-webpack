@@ -4,6 +4,14 @@ module.exports = {
   coverageDirectory: 'coverage',
   testPathIgnorePatterns: ['<rootDir>/node_modules/'],
   testEnvironment: 'jsdom',
+  coverageThreshold: {
+    './src/components/**': {
+      branches: 0,
+      functions: 0,
+      lines: 0,
+      statements: 0,
+    },
+  },
   transform: {
     '.+\\.(ts|tsx)$': 'ts-jest',
   },
