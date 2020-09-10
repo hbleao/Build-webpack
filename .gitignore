@@ -1,5 +1,6 @@
 #FOLDERS
 node_modules
+coverage
 
 #FILES
 yarn-error.log
