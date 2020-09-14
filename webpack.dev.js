@@ -1,29 +1,33 @@
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const common = require('./webpack.common');
-const { merge } = require('webpack-merge');
+const { DefinePlugin } = require("webpack");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+var DashboardPlugin = require("webpack-dashboard/plugin");
+
+const common = require("./webpack.common");
+const { merge } = require("webpack-merge");
 
 module.exports = merge(common, {
-  mode: 'development',
+  mode: "development",
   module: {
     rules: [
       {
         test: /\.ts(x?)$/,
-        loader: 'ts-loader',
+        loader: "ts-loader",
         exclude: /node_modules/,
       },
     ],
   },
   devServer: {
-    contentBase: './public',
+    contentBase: "./dist",
     writeToDisk: true,
     historyApiFallback: true,
     port: 3000,
   },
   plugins: [
+    new DashboardPlugin(),
     new DefinePlugin({
-      'process.env.API_URL': JSON.stringify('http://localhost:3000/dev'),
+      "process.env.API_URL": JSON.stringify("http://localhost:3000"),
     }),
-    new HtmlWebpackPlugin({ template: './src/templates/template.dev.html' }),
+    new HtmlWebpackPlugin({ template: "./templates/template.dev.html" }),
   ],
-  devtool: 'eval-source-map',
+  devtool: "eval-source-map",
 });

@@ -1,21 +1,23 @@
 module.exports = {
-  roots: ['<rootDir>/src'],
-  collectCoverageFrom: ['<rootDir>/src/**/*.{ts,tsx}'],
-  coverageDirectory: 'coverage',
-  testPathIgnorePatterns: ['<rootDir>/node_modules/'],
-  testEnvironment: 'jsdom',
+  bail: 1,
+  roots: ["<rootDir>/src"],
+  setupFiles: ["<rootDir>/src/setupTests.ts"],
+  collectCoverageFrom: ["<rootDir>/src/components/**/*.{ts,tsx}"],
+  coverageDirectory: "coverage",
+  testPathIgnorePatterns: ["<rootDir>/node_modules/"],
+  testEnvironment: "jsdom",
   coverageThreshold: {
-    './src/components/**': {
-      branches: 0,
-      functions: 0,
-      lines: 0,
-      statements: 0,
+    "./src/components/**": {
+      branches: 80,
+      functions: 80,
+      lines: 80,
+      statements: 80,
     },
   },
   transform: {
-    '.+\\.(ts|tsx)$': 'ts-jest',
+    ".+\\.(ts|tsx)$": "ts-jest",
   },
   moduleNameMapper: {
-    '@/(.*)': '<rootDir>/src/$1',
+    "@/(.*)": "<rootDir>/src/$1",
   },
 };

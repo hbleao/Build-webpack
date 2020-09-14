@@ -7,11 +7,13 @@
   "keywords": [],
   "license": "ISC",
   "scripts": {
-    "start": "node index",
+    "start": "yarn build && node index.ts",
     "dev": "webpack-dev-server --open --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js",
-    "test": "jest --watch",
-    "test:ci": "jest --coverage"
+    "test": "jest --no-cache --runInBand",
+    "test:watch": "jest --watch",
+    "test:ci": "jest --coverage",
+    "analyzer": "webpack-dashboard -- webpack-dev-server --config ./webpack.dev.js"
   },
   "dependencies": {
     "axios": "^0.20.0",
@@ -22,24 +24,29 @@
     "react-router-dom": "^5.2.0"
   },
   "devDependencies": {
+    "@types/enzyme": "^3.10.6",
     "@types/jest": "^26.0.13",
     "@types/node": "^14.6.4",
     "@types/react-dom": "^16.9.8",
     "@types/react-router-dom": "^5.1.5",
     "babel-loader": "^8.1.0",
     "clean-webpack-plugin": "^3.0.0",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.4",
     "file-loader": "^6.1.0",
     "html-webpack-plugin": "^4.4.1",
     "husky": "^4.3.0",
     "jest": "^26.4.2",
     "jest-cli": "^26.4.2",
     "lint-staged": "^10.3.0",
+    "styled-components": "^5.2.0",
     "svg-inline-loader": "^0.8.2",
     "ts-jest": "^26.3.0",
     "ts-loader": "^8.0.3",
     "typescript": "^4.0.2",
     "webpack": "^4.44.1",
     "webpack-cli": "^3.3.12",
+    "webpack-dashboard": "^3.2.1",
     "webpack-dev-server": "^3.11.0",
     "webpack-merge": "^5.1.4"
   }
