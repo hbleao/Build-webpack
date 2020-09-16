@@ -24,9 +24,6 @@ module.exports = merge(common, {
   },
   plugins: [
     new DashboardPlugin(),
-    new DefinePlugin({
-      "process.env.API_URL": JSON.stringify("http://localhost:3000"),
-    }),
     new HtmlWebpackPlugin({ template: "./templates/template.dev.html" }),
   ],
   devtool: "eval-source-map",
