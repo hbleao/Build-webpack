@@ -34,14 +34,7 @@ module.exports = merge(common, {
   },
   plugins: [
     new CompressionWebpackPlugin({
-      asset: "[path].gz[query]",
       algorithm: "gzip",
-      test: /\.js$|\.css$|\.html$/,
-      threshold: 10240,
-      minRatio: 0.8,
-    }),
-    new BrotliPlugin({
-      asset: "[path].br[query]",
       test: /\.js$|\.css$|\.html$/,
       threshold: 10240,
       minRatio: 0.8,
