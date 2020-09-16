@@ -8,15 +8,8 @@ const root = path.resolve(__dirname, "/dist");
 // app.use(express.static(root));
 
 app.use(
-  "/",
-  expressStaticGzip("/dist/", {
+  expressStaticGzip({
     enableBrotli: true,
-    customCompressions: [
-      {
-        encodingName: "deflate",
-        fileExtension: "zz",
-      },
-    ],
     orderPreference: ["br"],
   })
 );
