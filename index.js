@@ -15,6 +15,7 @@
 // app.listen(process.env.PORT || 3001);
 
 const fallback = require("express-history-api-fallback");
+const expressStaticGzip = require("express-static-gzip");
 const express = require("express");
 const app = express();
 const root = `${__dirname}/dist`;
