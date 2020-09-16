@@ -7,20 +7,15 @@ const { merge } = require("webpack-merge");
 
 module.exports = merge(common, {
   mode: "development",
-  module: {
-    rules: [
-      {
-        test: /\.ts(x?)$/,
-        loader: "ts-loader",
-        exclude: /node_modules/,
-      },
-    ],
-  },
   devServer: {
     contentBase: "./dist",
     writeToDisk: true,
     historyApiFallback: true,
     port: 3000,
+    overlay: {
+      warnings: true,
+      errors: true,
+    },
   },
   plugins: [
     new DashboardPlugin(),

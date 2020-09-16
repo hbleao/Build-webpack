@@ -1,15 +1,19 @@
-const { DefinePlugin } = require("webpack");
 const path = require("path");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 module.exports = {
   entry: path.resolve(__dirname, "src"),
   output: {
-    path: path.join(__dirname, "dist/"),
+    path: path.join(__dirname, "build/"),
     filename: "main-bundle.js",
   },
   module: {
     rules: [
+      {
+        test: /\.ts(x?)$/,
+        loader: "ts-loader",
+        exclude: /node_modules/,
+      },
       {
         test: /\.(png|jpe?g|gif)$/i,
         use: [
