@@ -1,4 +1,3 @@
-const { DefinePlugin } = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 var DashboardPlugin = require("webpack-dashboard/plugin");
 

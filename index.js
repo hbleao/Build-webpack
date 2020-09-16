@@ -3,13 +3,13 @@ const fallback = require("express-history-api-fallback");
 const express = require("express");
 const expressStaticGzip = require("express-static-gzip");
 const app = express();
-const root = `${__dirname}/dist`;
+const root = path.resolve(__dirname, "/dist");
 
 // app.use(express.static(root));
 
 app.use(
   "/",
-  expressStaticGzip("/my/rootFolder/", {
+  expressStaticGzip("./dist/", {
     enableBrotli: true,
     customCompressions: [
       {
