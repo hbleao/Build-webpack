@@ -7,7 +7,7 @@
   "keywords": [],
   "license": "ISC",
   "scripts": {
-    "start": "node ./server/index.js",
+    "start": "node index",
     "dev": "webpack-dev-server --open --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js",
     "test": "jest --no-cache --runInBand",
