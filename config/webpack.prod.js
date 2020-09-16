@@ -1,6 +1,6 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const CompressionPlugin = require("compression-webpack-plugin");
-const BrotliPlugin = require("brotli-webpack-plugin");
+// const CompressionPlugin = require("compression-webpack-plugin");
+// const BrotliPlugin = require("brotli-webpack-plugin");
 
 const common = require("./webpack.common");
 const { merge } = require("webpack-merge");
@@ -34,10 +34,10 @@ module.exports = merge(common, {
   },
   plugins: [
     new HtmlWebpackPlugin({ template: "./templates/template.prod.html" }),
-    new CompressionPlugin({
-      algorithm: "gzip",
-    }),
-    new BrotliPlugin(),
+    // new CompressionPlugin({
+    //   algorithm: "gzip",
+    // }),
+    // new BrotliPlugin(),
   ],
   devtool: "eval-source-map",
 });
