@@ -1,13 +1,13 @@
 const path = require("path");
 const fallback = require("express-history-api-fallback");
 const express = require("express");
-const expressStaticGzip = require("express-static-gzip");
+// const expressStaticGzip = require("express-static-gzip");
 
 const app = express();
 
 const root = path.resolve(__dirname, "..", "dist");
 
-app.use(express.static(expressStaticGzip()));
+app.use(express.static());
 
 // app.use(
 //   expressStaticGzip("../dist", {
