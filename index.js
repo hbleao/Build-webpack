@@ -5,6 +5,7 @@ const expressStaticGzip = require("express-static-gzip");
 const app = express();
 const root = `${__dirname}/dist`;
 
-app.use(express.static(root));
+// app.use(express.static(root));
+app.use(expressStaticGzip());
 app.use(fallback("index.html", { root }));
 app.listen(process.env.PORT || 3001);
