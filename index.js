@@ -5,7 +5,7 @@ const expressStaticGzip = require("express-static-gzip");
 const app = express();
 const root = `${__dirname}/dist`;
 
-app.use(express.static(root));
+// app.use(express.static(root));
 
 app.use(
   "/",
