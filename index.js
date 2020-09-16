@@ -3,7 +3,7 @@ const fallback = require("express-history-api-fallback");
 const express = require("express");
 const expressStaticGzip = require("express-static-gzip");
 const app = express();
-const root = `${path.resolve(__dirname, "..", "build")}`;
+const root = path.resolve(__dirname, "..", "build");
 
 app.use(
   expressStaticGzip(root, {
