@@ -20,7 +20,12 @@ const express = require("express");
 const app = express();
 const root = `${__dirname}/dist`;
 
-app.use(express.static(root));
-app.use(expressStaticGzip(root));
+app.use(
+  "/",
+  expressStaticGzip(path.join(__dirname), {
+    enableBrotli: true,
+  })
+);
+
 app.use(fallback("index.html", { root }));
 app.listen(process.env.PORT || 3001);

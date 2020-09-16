@@ -1,5 +1,6 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const compressionWebpackPlugin = require("compression-webpack-plugin");
+const CompressionWebpackPlugin = require("compression-webpack-plugin");
+const BrotliPlugin = require("brotli-webpack-plugin");
 
 const common = require("./webpack.common");
 const { merge } = require("webpack-merge");
@@ -32,8 +33,18 @@ module.exports = merge(common, {
     "react-router-dom": "ReactRouterDOM",
   },
   plugins: [
-    new compressionWebpackPlugin({
-      deleteOriginalAssets: true,
+    new CompressionWebpackPlugin({
+      asset: "[path].gz[query]",
+      algorithm: "gzip",
+      test: /\.js$|\.css$|\.html$/,
+      threshold: 10240,
+      minRatio: 0.8,
+    }),
+    new BrotliPlugin({
+      asset: "[path].br[query]",
+      test: /\.js$|\.css$|\.html$/,
+      threshold: 10240,
+      minRatio: 0.8,
     }),
     new HtmlWebpackPlugin({ template: "./templates/template.prod.html" }),
   ],
