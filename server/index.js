@@ -7,7 +7,7 @@ const app = express();
 
 const root = path.resolve(__dirname, "..", "dist");
 
-app.use(express.static());
+app.use(express.static(root));
 
 // app.use(
 //   expressStaticGzip("../dist", {
