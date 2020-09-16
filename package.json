@@ -36,6 +36,7 @@
     "enzyme-adapter-react-16": "^1.15.4",
     "express-static-gzip": "^2.0.8",
     "file-loader": "^6.1.0",
+    "git-commit-msg-linter": "^2.6.0",
     "html-webpack-plugin": "^4.4.1",
     "husky": "^4.3.0",
     "jest": "^26.4.2",
