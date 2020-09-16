@@ -9,7 +9,7 @@ const root = path.resolve(__dirname, "/dist");
 
 app.use(
   "/",
-  expressStaticGzip("./dist/", {
+  expressStaticGzip("/dist/", {
     enableBrotli: true,
     customCompressions: [
       {
