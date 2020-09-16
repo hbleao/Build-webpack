@@ -32,9 +32,9 @@ module.exports = merge(common, {
     "react-router-dom": "ReactRouterDOM",
   },
   plugins: [
-    // new compressionWebpackPlugin({
-    //   deleteOriginalAssets: true,
-    // }),
+    new compressionWebpackPlugin({
+      deleteOriginalAssets: true,
+    }),
     new HtmlWebpackPlugin({ template: "./templates/template.prod.html" }),
   ],
   devtool: "eval-source-map",
