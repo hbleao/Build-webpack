@@ -7,7 +7,7 @@ const { merge } = require("webpack-merge");
 module.exports = merge(common, {
   mode: "development",
   devServer: {
-    contentBase: "./dist",
+    contentBase: "../dist",
     writeToDisk: true,
     historyApiFallback: true,
     port: 3000,

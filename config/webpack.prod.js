@@ -1,5 +1,4 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const CompressionWebpackPlugin = require("compression-webpack-plugin");
 
 const common = require("./webpack.common");
 const { merge } = require("webpack-merge");
@@ -32,9 +31,6 @@ module.exports = merge(common, {
     "react-router-dom": "ReactRouterDOM",
   },
   plugins: [
-    new CompressionWebpackPlugin({
-      algorithm: "gzip",
-    }),
     new HtmlWebpackPlugin({ template: "./templates/template.prod.html" }),
   ],
   devtool: "eval-source-map",
